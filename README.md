@@ -7,26 +7,9 @@
 - 支持IPv6地址的动态DNS更新。
 - 使用阿里云的Java SDK进行DNS记录的管理。
 
-## 技术栈
-- **Spring Boot**: 用于构建应用程序的框架。
-- **阿里云Java SDK**: 用于与阿里云API进行交互。
-- **Maven**: 用于项目管理和依赖管理。
-
-## 快速开始
-
-### 环境要求
+## 环境要求
 - Java 1.8 或更高版本
 - Maven 3.6 或更高版本
-
-### 构建项目
-```bash
-mvn clean install
-```
-
-### 运行项目
-```bash
-mvn spring-boot:run
-```
 
 ## 依赖
 - `spring-boot-starter-web`: 用于构建Web应用程序。
@@ -34,3 +17,31 @@ mvn spring-boot:run
 - `aliyun-java-sdk-alidns`: 阿里云DNS服务的Java SDK。
 - `spring-boot-starter-test`: 用于测试的Spring Boot启动器。
 
+## 快速开始
+
+### 修改配置
+在`src/main/resources/application.properties`文件中，修改以下配置：
+```properties
+aliyun.accessKeyId=<your access key id>
+aliyun.accessKeySecret=<your access key secret>
+aliyun.domainName=<your domain name>  # 域名
+aliyun.recordName=<your record name>  # 记录名称
+```
+
+### 构建项目&运行项目
+* 使用Maven
+    ```bash
+    #构建项目  
+    mvn clean package
+    
+    # 使用java命令运行项目
+    java -jar ./target/*.jar
+    ```
+* 使用Docker
+    ```bash
+    # 构建项目
+    docker build -t aliyun-ipv6-ddns .
+    
+    # 使用Docker[-d: 后台]运行项目
+    docker run -d aliyun-ipv6-ddns
+    ```
