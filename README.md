@@ -28,18 +28,20 @@ aliyun.domainName=<your domain name>  # 域名
 aliyun.recordName=<your record name>  # 记录名称
 ```
 
-### 构建项目&运行项目
-* 使用Maven
-    ```bash
+### 构建项目
+```bash
     #构建项目  
     mvn clean package
-    
-    # 使用java命令运行项目
+```
+
+### 运行项目
+* 使用java命令运行项目
+    ```bash
     java -jar ./target/*.jar
     ```
 * 使用Docker
     ```bash
-    # 构建项目
+    # 构建镜像
     docker build -t aliyun-ipv6-ddns .
     
     # 使用Docker[-d: 后台]运行项目
