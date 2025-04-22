@@ -39,11 +39,3 @@ aliyun.recordName=<your record name>  # 记录名称
     ```bash
     java -jar ./target/*.jar
     ```
-* 使用Docker
-    ```bash
-    # 构建镜像
-    docker build -t aliyun-ipv6-ddns .
-    
-    # 使用Docker[-d: 后台]运行项目
-    docker run -d aliyun-ipv6-ddns
-    ```
